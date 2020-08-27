@@ -4,7 +4,7 @@ This action updates a single terraform cloud variable variable.
 
 ## Inputs
 
-#### `tf-oken` 
+#### `tf-token` 
 **Required** An API token for Terraform Cloud..
 
 #### `workspace-name` 
@@ -21,6 +21,7 @@ This action updates a single terraform cloud variable variable.
 
 ## Example usage 
 
+```
 uses: HussleHQ/terraform-cloud-update-var@v1
 with:
   tf-token: '***'
@@ -28,4 +29,13 @@ with:
   org-name: 'Hussle'
   var-key: 'Gym'
   var-value: 'ThousandsOfGyms'
+```
 
+## Development
+
+```
+# git add as per usual
+
+git tag -a -m 'Thousands of gyms. Zero contracts.'
+git push --follow-tags
+```
