@@ -1,0 +1,27 @@
+name: 'terraform-cloud-update-var'
+description: 'Update Terraform Cloud variable.'
+inputs:
+  tf-token:
+    required: true
+    description: 'An API token for Terraform Cloud.'
+  workspace-name:
+    required: true
+    description: 'The Terraform Cloud workspace to update.'
+  org-name:
+    required: true
+    description: 'The Terraform Cloud organization the workspace belongs to.'
+  var-key:
+    required: true
+    description: 'The terraform cloud variable key to update.'
+  var-value:
+    required: true
+    description: 'The terraform cloud variable value.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.tf-token }}
+    - ${{ inputs.workspace-name }}
+    - ${{ inputs.org-name }}
+    - ${{ inputs.var-key }}
+    - ${{ inputs.var-value }}
