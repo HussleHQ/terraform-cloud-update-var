@@ -19,16 +19,14 @@ This action updates a single terraform cloud variable variable.
 #### `var-value` 
 **Required** The terraform cloud variable value.
 
-## Example usage 
+## Example usage
 
 ```
-uses: HussleHQ/terraform-cloud-update-var@v1
+uses: HussleHQ/terraform-trigger-cloud-run@v1
 with:
-  tf-token: '***'
-  workspace-name: 'Workout'
-  org-name: 'Hussle'
-  var-key: 'Gym'
-  var-value: 'ThousandsOfGyms'
+  tf-token: ${{ secrets.TERRAFORM_TOKEN }}
+  workspace-name: ${{ env.WORKSPACE_NAME }}
+  org-name: ${{ env.ORG_NAME }}
 ```
 
 ## Development
@@ -36,6 +34,6 @@ with:
 ```
 # git add as per usual
 
-git tag -a -m 'Thousands of gyms. Zero contracts.'
+git tag -a -m 'Thousands of gyms. Zero contracts.' v1
 git push --follow-tags
 ```
